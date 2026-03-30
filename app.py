@@ -19,7 +19,24 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+st.markdown("""
+<style>
+/* Hide collapse arrow button */
+button[kind="header"] {
+    display: none !important;
+}
 
+/* Force sidebar always visible */
+section[data-testid="stSidebar"] {
+    display: block !important;
+}
+
+/* Prevent sidebar from shrinking */
+section[data-testid="stSidebar"] > div {
+    width: 250px !important;
+}
+</style>
+""", unsafe_allow_html=True)
 # ─────────────────────────────────────────────
 #  CSS
 # ─────────────────────────────────────────────
