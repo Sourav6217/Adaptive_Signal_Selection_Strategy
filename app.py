@@ -1037,7 +1037,7 @@ elif page == sections[7]:
         fig.add_trace(go.Scatterpolar(
             r=vals + [vals[0]], theta=categories + [categories[0]],
             name=name, line=dict(color=clr, width=2),
-            fill="toself", fillcolor=clr + "18",
+            fill="toself", fillcolor="rgba(99, 102, 241, 0.1)",
         ))
     fig.update_layout(
         paper_bgcolor="#0f172a",
