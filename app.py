@@ -27,7 +27,7 @@ st.set_page_config(
     page_title="Adaptive Signal Selection | Sourav Manna",
     page_icon="📈",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state=st.session_state.sidebar_state
 )
 
 # ─────────────────────────────────────────────
