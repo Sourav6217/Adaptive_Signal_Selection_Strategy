@@ -343,7 +343,7 @@ if page == sections[0]:
     col_l, col_r = st.columns([3, 2])
 
     with col_l:
-        st.markdown("<h2 style='color:#0f172a; font-weight:700;'>Research Framework</h2>",
+        st.markdown("<h2 style='color:#111827 ; font-weight:700;'>Research Framework</h2>",
     unsafe_allow_html=True)
         for num, title, desc, clr in [
             ("01", "Data Collection",     "BTC-USD OHLCV via Yahoo Finance (2019–2026)",    "#60a5fa"),
