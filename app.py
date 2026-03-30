@@ -593,7 +593,7 @@ elif page == sections[2]:
         st.plotly_chart(fig2, use_container_width=True)
 
     with col_b:
-        st.markdown("### Signal Logic")
+        st.markdown("## Signal Logic")
         st.markdown(
             "<div class='formula'>"
             "ma_short = Close.rolling(10).mean()<br>"
