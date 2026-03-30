@@ -1,5 +1,4 @@
 import streamlit as st
-st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
@@ -14,6 +13,16 @@ warnings.filterwarnings("ignore")
 # ─────────────────────────────────────────────
 #  PAGE CONFIG
 # ─────────────────────────────────────────────
+# Sidebar toggle button
+if "sidebar_state" not in st.session_state:
+    st.session_state.sidebar_state = "expanded"
+
+toggle = st.button("☰ Menu")
+
+if toggle:
+    st.session_state.sidebar_state = (
+        "collapsed" if st.session_state.sidebar_state == "expanded" else "expanded"
+    )
 st.set_page_config(
     page_title="Adaptive Signal Selection | Sourav Manna",
     page_icon="📈",
