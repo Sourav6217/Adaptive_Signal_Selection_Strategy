@@ -409,10 +409,10 @@ if page == sections[0]:
         fill="tozeroy", fillcolor="rgba(96,165,250,0.05)",
     ))
     for date, label, clr in [
-        ("2020-03-12", "Covid Crash",    "#f87171"),
-        ("2021-11-10", "ATH $69K",       "#4ade80"),
-        ("2022-11-09", "FTX Collapse",   "#f87171"),
-        ("2024-11-05", "Election Rally", "#4ade80"),
+        (pd.to_datetime("2020-03-12"), "Covid Crash",    "#f87171"),
+        (pd.to_datetime("2021-11-10"), "ATH $69K",       "#4ade80"),
+        (pd.to_datetime("2022-11-09"), "FTX Collapse",   "#f87171"),
+        (pd.to_datetime("2024-11-05"), "Election Rally", "#4ade80"),
     ]:
         fig.add_vline(x=date, line_dash="dot", line_color=clr, line_width=1, opacity=0.5,
                       annotation_text=label, annotation_font_color=clr,
