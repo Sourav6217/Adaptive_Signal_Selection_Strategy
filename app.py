@@ -13,16 +13,19 @@ warnings.filterwarnings("ignore")
 # ─────────────────────────────────────────────
 #  PAGE CONFIG
 # ─────────────────────────────────────────────
-# Sidebar toggle button
+
+# Initialize state
 if "sidebar_state" not in st.session_state:
     st.session_state.sidebar_state = "expanded"
 
-toggle = st.button("☰ Menu")
-
-if toggle:
+# Toggle button
+if st.button("☰ Menu"):
     st.session_state.sidebar_state = (
         "collapsed" if st.session_state.sidebar_state == "expanded" else "expanded"
     )
+    st.rerun()   # 🔥 IMPORTANT
+
+# Page config MUST be here
 st.set_page_config(
     page_title="Adaptive Signal Selection | Sourav Manna",
     page_icon="📈",
