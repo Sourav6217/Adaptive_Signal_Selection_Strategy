@@ -11,19 +11,22 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # ─────────────────────────────────────────────
-#  PAGE CONFIG
+# PAGE CONFIG + FIXED SIDEBAR (NO COLLAPSE)
 # ─────────────────────────────────────────────
+
 st.set_page_config(
     page_title="Adaptive Signal Selection | Sourav Manna",
     page_icon="📈",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
+# 🔥 Lock sidebar (hide collapse arrow)
 st.markdown("""
 <style>
-/* Hide collapse arrow button */
-button[kind="header"] {
-    display: none !important;
+/* Hide top header (contains collapse arrow) */
+header[data-testid="stHeader"] {
+    display: none;
 }
 
 /* Force sidebar always visible */
@@ -31,12 +34,13 @@ section[data-testid="stSidebar"] {
     display: block !important;
 }
 
-/* Prevent sidebar from shrinking */
+/* Fix sidebar width */
 section[data-testid="stSidebar"] > div {
-    width: 250px !important;
+    width: 280px !important;
 }
 </style>
 """, unsafe_allow_html=True)
+
 # ─────────────────────────────────────────────
 #  CSS
 # ─────────────────────────────────────────────
