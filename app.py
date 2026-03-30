@@ -400,58 +400,58 @@ if page == sections[0]:
             unsafe_allow_html=True,
         )
 
-   # BTC price chart
-st.markdown("<br>", unsafe_allow_html=True)
+    # BTC price chart
+    st.markdown("<br>", unsafe_allow_html=True)
 
-fig = go.Figure()
+    fig = go.Figure()
 
-fig.add_trace(go.Scatter(
-    x=df.index,
-    y=df["Close"],
-    mode="lines",
-    name="BTC-USD Close",
-    line=dict(color=COLOR["blue"], width=1.5),
-    fill="tozeroy",
-    fillcolor="rgba(96,165,250,0.05)",
-))
+    fig.add_trace(go.Scatter(
+        x=df.index,
+        y=df["Close"],
+        mode="lines",
+        name="BTC-USD Close",
+        line=dict(color=COLOR["blue"], width=1.5),
+        fill="tozeroy",
+        fillcolor="rgba(96,165,250,0.05)",
+    ))
 
-# ✅ FIXED vertical lines (no add_vline)
-for date, label, clr in [
-    (pd.to_datetime("2020-03-12"), "Covid Crash", "#f87171"),
-    (pd.to_datetime("2021-11-10"), "ATH $69K", "#4ade80"),
-    (pd.to_datetime("2022-11-09"), "FTX Collapse", "#f87171"),
-    (pd.to_datetime("2024-11-05"), "Election Rally", "#4ade80"),
-]:
-    fig.add_shape(
-        type="line",
-        x0=date,
-        x1=date,
-        y0=0,
-        y1=1,
-        xref="x",
-        yref="paper",
-        line=dict(color=clr, dash="dot", width=1),
+    # ✅ FIXED vertical lines (no add_vline)
+    for date, label, clr in [
+        (pd.to_datetime("2020-03-12"), "Covid Crash", "#f87171"),
+        (pd.to_datetime("2021-11-10"), "ATH $69K", "#4ade80"),
+        (pd.to_datetime("2022-11-09"), "FTX Collapse", "#f87171"),
+        (pd.to_datetime("2024-11-05"), "Election Rally", "#4ade80"),
+    ]:
+        fig.add_shape(
+            type="line",
+            x0=date,
+            x1=date,
+            y0=0,
+            y1=1,
+            xref="x",
+            yref="paper",
+            line=dict(color=clr, dash="dot", width=1),
+        )
+
+        fig.add_annotation(
+            x=date,
+            y=1,
+            yref="paper",
+            text=label,
+            showarrow=False,
+            font=dict(color=clr, size=10),
+            xanchor="left"
+        )
+
+    # layout
+    dk(
+        fig,
+        title="Bitcoin (BTC-USD) Price History — Full Study Period",
+        height=320,
+        yprefix="$"
     )
 
-    fig.add_annotation(
-        x=date,
-        y=1,
-        yref="paper",
-        text=label,
-        showarrow=False,
-        font=dict(color=clr, size=10),
-        xanchor="left"
-    )
-
-# layout
-dk(
-    fig,
-    title="Bitcoin (BTC-USD) Price History — Full Study Period",
-    height=320,
-    yprefix="$"
-)
-
-st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 
 # ═══════════════════════════════════════════════════════════
