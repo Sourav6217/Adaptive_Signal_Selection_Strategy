@@ -21,25 +21,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# 🔥 Lock sidebar (hide collapse arrow)
-st.markdown("""
-<style>
-/* Hide top header (contains collapse arrow) */
-header[data-testid="stHeader"] {
-    display: none;
-}
-
-/* Force sidebar always visible */
-section[data-testid="stSidebar"] {
-    display: block !important;
-}
-
-/* Fix sidebar width */
-section[data-testid="stSidebar"] > div {
-    width: 280px !important;
-}
-</style>
-""", unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────
 #  CSS
