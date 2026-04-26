@@ -7,7 +7,7 @@
 
 ## 🌐 Live App
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://adaptivesignalselectionstrategy-ggfp8oxyhdl9rjj8ktkw7e.streamlit.app)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://adaptive-signal-selection-strategy.streamlit.app/)
 
 ---
 
